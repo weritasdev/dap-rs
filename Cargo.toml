@@ -1,6 +1,23 @@
-[package]
-name = "dap-rs"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+members = ["bindings/dap-ffi", "bindings/uniffi-bindgen", "crates/*"]
+default-members = ["crates/*"]
+resolver = "2"
 
-[dependencies]
+
+[workspace.package]
+authors = ["dappers"]
+homepage = "https://github.com/tbd54566975/dap-rs"
+repository = "https://github.com/tbd54566975/dap-rs.git"
+license = "APACHE"
+rust-version = "1.79.0"
+
+
+
+[workspace.dependencies]
+base64 = "0.22.0"
+reqwest = { version = "0.12.4", features = ["json", "blocking"] }
+serde = { version = "1.0.193", features = ["derive"] }
+serde_json = "1.0.108"
+sha2 = "0.10.8"
+tokio = "1.38.0"
+uniffi = "0.27.2"
